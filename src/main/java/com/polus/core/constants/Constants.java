@@ -70,7 +70,7 @@ public interface Constants {
 //    Integer PROPOSAL_STATUS_CODE_PENDING_REVISION_BY_PI_ = 24;
 //
 //    // Route Log Status Code
-//    String WORKFLOW_STATUS_CODE_WAITING = "W";
+    String WORKFLOW_STATUS_CODE_WAITING = "W";
 //    String WORKFLOW_STATUS_CODE_APPROVED = "A";
 //    String WORKFLOW_STATUS_CODE_REJECTED = "R";
 //    String WORKFLOW_STATUS_CODE_BYPASSED = "B";
@@ -875,7 +875,7 @@ public interface Constants {
 //    String EXCEL_LONG_DATE_FORMAT = "dd-MMMM-yyyy";
 //    String LONG_DATE_FORMAT = "dd/MM/yyyy HH:mm:ss aa";
     String LOG_DATE_FORMAT = "dd_MM_yyyy";
-//    String TWELVE_HOUR_DATE_FORMAT = "dd/MM/yyyy hh:mm:ss aa";
+    String TWELVE_HOUR_DATE_FORMAT = "dd/MM/yyyy hh:mm:ss aa";
 //    String ICS_DATE_FORMAT = "yyyy-MM-dd";
 //    String PROGRESS_REPORT_DATE_FORMAT = "MMM yyyy";
 //    String LOA_DATE_FORMAT = "dd MMMM yyyy";
