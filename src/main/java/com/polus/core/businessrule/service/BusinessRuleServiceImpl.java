@@ -23,7 +23,7 @@ import com.polus.core.workflow.pojo.WorkflowAttachment;
 import com.polus.core.workflow.service.WorkflowExtService;
 
 @Transactional
-@Service(value = "businessRuleMaintenanceService")
+@Service(value = "businessRuleService")
 public class BusinessRuleServiceImpl implements BusinessRuleService {
 
 	protected static Logger logger = LogManager.getLogger(BusinessRuleServiceImpl.class.getName());

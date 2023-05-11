@@ -20,7 +20,7 @@ public class Role implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GenericGenerator(name = "roleIdGenerator", strategy = "com.polus.fibicomp.generator.FibiPKGenerator")
+	@GenericGenerator(name = "roleIdGenerator", strategy = "com.polus.core.idgenerator.FibiPKGenerator")
 	@GeneratedValue(generator = "roleIdGenerator")
 	@Column(name = "ROLE_ID")
     private Integer roleId;

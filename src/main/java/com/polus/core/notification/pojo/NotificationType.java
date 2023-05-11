@@ -28,7 +28,7 @@ public class NotificationType implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GenericGenerator(name = "notificationIdGenerator", strategy = "com.polus.fibicomp.generator.FibiPKGenerator")
+	@GenericGenerator(name = "notificationIdGenerator", strategy = "com.polus.core.idgenerator.FibiPKGenerator")
 	@GeneratedValue(generator = "notificationIdGenerator")
 	@Column(name = "NOTIFICATION_TYPE_ID")
 	private Integer notificationTypeId;
