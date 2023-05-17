@@ -1070,7 +1070,7 @@ public interface Constants {
 //    String LOGIN_FLAG = "IN";
 //    String LOGOUT_FLAG = "OUT";
 //    String START_TIME = "00:00:00.0";
-//    String END_TIME = "23:59:59.0";
+    String END_TIME = "23:59:59.0";
 //    String TIME_FORMAT = "HH:mm:ss";
 //
 //    // GrantCall Action Type Code

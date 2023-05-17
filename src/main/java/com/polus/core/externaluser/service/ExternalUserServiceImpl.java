@@ -57,6 +57,8 @@ import com.polus.core.person.dao.PersonDao;
 import com.polus.core.person.pojo.Person;
 import com.polus.core.security.AuthenticatedUser;
 import com.polus.core.sftpconfiguration.SftpConfigurationService;
+import com.polus.core.useractivitylog.dao.UserActivityLogDao;
+import com.polus.core.useractivitylog.pojo.PersonLoginDetail;
 
 @Transactional
 @Service(value = "externalUserService")
@@ -90,6 +92,9 @@ public class ExternalUserServiceImpl implements ExternalUserService {
 	
 	@Value("${oracledb}")
 	private String oracledb;
+
+	@Autowired
+	private UserActivityLogDao userActivityLogDao;
 
 	private static final String EMAILBODY_STRUCTURE = "Please go to ";
 	private static final String EMAILBODY_FILE_LOC = "  to view the files<br/>";
@@ -610,6 +615,16 @@ public class ExternalUserServiceImpl implements ExternalUserService {
 		commonService.setNotificationRecipientsforNonEmployees(externalUser.getEmailAddress(), Constants.NOTIFICATION_RECIPIENT_TYPE_TO, dynamicEmailrecipients);
 		emailServiceVO.setRecipients(dynamicEmailrecipients);
 		emailService.sendEmail(emailServiceVO);
+	}
+
+	@Override
+	public String fetchExternalUserLoginDetails(HomeVo vo) {
+		String login = "";
+		PersonLoginDetail loginDetails = userActivityLogDao.getRecentPersonLoginDetailByUserName(vo.getUserName());
+		if (loginDetails != null) {
+			return commonDao.convertObjectToJSON(loginDetails);
+		}
+		return commonDao.convertObjectToJSON(login);
 	}
 
 	@Scheduled(cron = "${external.registeredUser.schedule}", zone = Constants.CRON_JOB_TIMEZONE)

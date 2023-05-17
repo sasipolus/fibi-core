@@ -57,4 +57,9 @@ public class ExternalUserController {
 		externalUserService.sendRegisteredExternalUser();
 	}
 
+	@PostMapping(value = "/getExternalUserLoginDetails")
+	public String getExternalUserLoginDetails(@RequestBody HomeVo vo,HttpServletRequest request, HttpServletResponse response) {
+		logger.info("Requesting for getExternalUserLoginDetails");
+		return externalUserService.fetchExternalUserLoginDetails(vo);
+	}
 }

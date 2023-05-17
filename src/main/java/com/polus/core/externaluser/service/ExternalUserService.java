@@ -36,6 +36,13 @@ public interface ExternalUserService {
 	 */
 	public void externalUserApprovedMail();
 
+	/**
+	 * Fetch External User login details
+	 * @param vo
+	 * @return
+	 */
+	public String fetchExternalUserLoginDetails(HomeVo vo);
+
 	public void sendRegisteredExternalUser();
 
 }
