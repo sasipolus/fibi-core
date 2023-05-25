@@ -45,10 +45,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session-jdbc</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -163,7 +163,9 @@
 			<configuration>
 				<excludes>
 					<exclude>**/config/*Config.java</exclude>
-					<!-- <exclude>**/*.properties</exclude>-->
+					<exclude>**/*.properties</exclude>
+					<!--<exclude>**/config/*Impl.java</exclude>-->
+					<exclude>**/WebSecurity.java</exclude>
 					<exclude>**/*Application.java</exclude>
 					<exclude>**/*ServletInitializer.java</exclude>
 				</excludes>
@@ -175,15 +177,17 @@
 			<directory>src/main/java</directory>
 			<excludes>
 				<exclude>**/*Config.java</exclude>
+				<!--<exclude>**/config/*Impl.java</exclude>-->
+				<exclude>**/WebSecurity.java</exclude>
 				<exclude>**/*Application.java</exclude>
 				<exclude>**/*ServletInitializer.java</exclude>
 			</excludes>
 		</resource>
 		<resource>
-			<directory>src/main/resources</directory>
-			<excludes>
+			 <directory>src/main/resources</directory>
+			<!--<excludes>
 				<exclude>**/*.properties</exclude>
-			</excludes>
+			</excludes> -->
 		</resource>
 	</resources>
 	</build>

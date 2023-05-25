@@ -59,19 +59,19 @@ public class ElasticSyncOperation {
 
 	protected static Logger logger = LogManager.getLogger(ElasticSyncOperation.class.getName());
 
-	@Value("${elasticsync.sqs.enable}")
+	@Value("${fibicore.elasticsync.sqs.enable}")
 	private boolean sqsEnabled;
 
-	@Value("${elasticsync.enable}")
+	@Value("${fibicore.elasticsync.enable}")
 	private boolean elasticSyncEnabled;
 
-	@Value("${elastic.sqs.queue.name}")
+	@Value("${fibicore.elastic.sqs.queue.name}")
 	private String queueName;
 
-	@Value("${elastic.sync.url}")
+	@Value("${fibicore.elastic.sync.url}")
 	private String elasticSyncUrl;
 
-	@Value("${spring.elastic.error.mail.receiver}")
+	@Value("${fibicore.spring.elastic.error.mail.receiver}")
 	private String receiver;
 
 	private ExecutorService executorService = Executors.newCachedThreadPool();

@@ -64,7 +64,7 @@ public class EmailServiceImpl implements EmailService {
 	private static final String CC = "CC";
 	private static final String BCC = "BCC";
 
-	@Value("${notification.attachment.filepath}")
+	@Value("${fibicore.notification.attachment.filepath}")
 	private String notificationAttachmentFilePath;
 
 	@Override

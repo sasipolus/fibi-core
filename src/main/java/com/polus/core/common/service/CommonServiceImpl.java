@@ -120,7 +120,7 @@ public class CommonServiceImpl implements CommonService {
 	@Autowired
 	private CommonDao commonDao;
 
-	@Value("${notification.attachment.filepath}")
+	@Value("${fibicore.notification.attachment.filepath}")
 	private String notificationAttachmentFilePath;
 
 	@Autowired

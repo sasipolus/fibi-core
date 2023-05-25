@@ -3,6 +3,7 @@ package com.polus.core.pojo;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
@@ -46,8 +47,9 @@ public class Organization implements Serializable {
 	@Column(name="TELEX_NUMBER")
 	private String telexNumber;
 
-	@Column(name="CONGRESSIONAL_DISTRICT")
-	private String congressionalDistrict;
+	@ManyToOne(cascade = { CascadeType.REFRESH })
+	@JoinColumn(foreignKey = @ForeignKey(name = "ORGANIZATION_FK2"), name = "CONG_DISTRICT_CODE", referencedColumnName = "CONG_DISTRICT_CODE")
+	private CongressionalDistrict congressionalDistrict;
 
 	@Column(name="INCORPORATED_IN")
 	private String incorporatedIn;
@@ -205,14 +207,6 @@ public class Organization implements Serializable {
 
 	public void setTelexNumber(String telexNumber) {
 		this.telexNumber = telexNumber;
-	}
-
-	public String getCongressionalDistrict() {
-		return congressionalDistrict;
-	}
-
-	public void setCongressionalDistrict(String congressionalDistrict) {
-		this.congressionalDistrict = congressionalDistrict;
 	}
 
 	public String getIncorporatedIn() {
@@ -445,6 +439,14 @@ public class Organization implements Serializable {
 
 	public void setCountry(Country country) {
 		this.country = country;
+	}
+
+	public CongressionalDistrict getCongressionalDistrict() {
+		return congressionalDistrict;
+	}
+
+	public void setCongressionalDistrict(CongressionalDistrict congressionalDistrict) {
+		this.congressionalDistrict = congressionalDistrict;
 	}
 
 }
